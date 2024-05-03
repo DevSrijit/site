@@ -212,6 +212,10 @@ const nextConfig = {
         destination: '/content/sponsorship/'
       },
       {
+        source: '/bin/beta',
+        destination: '/bin/landing-new/'
+      },
+      {
         source: '/covid19/',
         destination: '/content/covid19/'
       },
@@ -285,6 +289,17 @@ const nextConfig = {
       },
       {
         source: '/api/(.+)',
+        headers: [
+          { key: 'Access-Control-Allow-Origin', value: '*' },
+          {
+            key: 'Access-Control-Allow-Methods',
+            value: 'GET, POST, OPTIONS'
+          },
+          { key: 'Access-Control-Allow-Headers', value: 'Content-Type' }
+        ]
+      },
+      {
+        source: '/api/bin/wokwi/(.+)',
         headers: [
           { key: 'Access-Control-Allow-Origin', value: '*' },
           {
